@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>WU</title>
+    <link rel="manifest" href="./manifest.webmanifest">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#ffffff">
+</head>
+
+<body>
+    <h1>Überschrift</h1>
+    <p id="meinAbsatz">Absatz</p>
+    <input id="area" type="text" />
+    <input onclick="calc()" type="submit" />
+</body>
+<script>
+    function calc() {
+        ausgabe = document.getElementById("meinAbsatz")
+        input = document.getElementById("area")
+        ausgabe.innerText = input.value * 12
+    }
+
+    if('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('./sw.js')
+        .then(function() { console.log("Service worker registered"); });
+    }
+</script>
+
+</html>
